@@ -42,10 +42,9 @@ body {
 
 .CV .profile {
     position: relative;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding-bottom: 20px;
 }
 
@@ -108,27 +107,5 @@ body {
 }
 
 .input:focus + .input-border {
-  width: 100%;
-}
-
-.form-control {
-  position: relative;
-  --width-of-input: 300px;
-}
-
-.input-alt {
-  font-size: 1.2rem;
-  padding-inline: 1em;
-  padding-block: 0.8em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.input-border-alt {
-  height: 3px;
-  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
-  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
-}
-
-.input-alt:focus + .input-border-alt {
   width: 100%;
 }
