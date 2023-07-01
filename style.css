@@ -35,8 +35,9 @@ body {
 
 .CV .right_side {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: #383838;
-    padding: 40px;
 }
 
 .CV .profile {
@@ -44,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-bottom: 20px;
 }
 
@@ -58,4 +60,75 @@ body {
 .CV .profile_icon i {
     margin-top: 10px;
     margin-left: 10px;
+}
+
+.CV h2 {
+    color: #4af626;
+}
+
+.CV .usr_input{
+    width: 100%;
+    background-color: #1b1b1b;
+}
+
+.input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+}
+
+.symbol {
+    position: absolute;
+    left: 5px;
+    top: 1%;
+    color: white;
+    pointer-events: none;
+}
+
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+
+.input-alt:focus + .input-border-alt {
+  width: 100%;
 }

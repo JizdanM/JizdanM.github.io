@@ -4,22 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Java Script -->
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <title>Curriculum Vitae | Mihai Jizdan</title>
+
 </head>
 <body>
     <div class="CV">
         <div class="left_side">
+
+            <!-- Profile -->
             <div class="profile">
                 <div class="profile_icon">
-                    <i class="fa fa-laptop" style="color: #4af626; font-size: 120px;"></i>
+                    <i class="fa fa-laptop" style="color: #298716; font-size: 120px;"></i>
                 </div>
-                <h2>Mihai Jizdan <br> <span>App developer</span></h2>
+                <center>
+                    <h2>Mihai Jizdan <br> <hr color="black"> <span>App developer</span></h2>
+                </center>
             </div>
         </div>
+
         <div class="right_side">
+
+            <!-- Search bar -->
+            <div class="usr_input">
+                <span class="symbol">&gt;</span>
+                <input class="input" id="usr_src" placeholder="Insert command" required type="text" onfocus="inputFocus(this)" onblur="inputBlur(this)" >
+                <span class="input-border input-border-alt"></span>
+            </div>
 
         </div>
     </div>
