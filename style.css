@@ -42,8 +42,9 @@ body {
 
 .CV .profile {
     position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding-bottom: 20px;
 }
 
@@ -51,7 +52,6 @@ body {
     position: relative;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     overflow: hidden;
 }
 
@@ -61,7 +61,6 @@ body {
 }
 
 .CV h2 {
-    text-align: center;
     color: #4af626;
 }
 
@@ -83,6 +82,13 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding-left: 20px;
 }
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
 
 .symbol {
     position: absolute;
@@ -90,22 +96,4 @@ body {
     top: 1%;
     color: white;
     pointer-events: none;
-}
-
-.input-border {
-  position: absolute;
-  background: var(--border-after-color);
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-.input:focus {
-  outline: none;
-}
-
-.input:focus + .input-border {
-  width: 100%;
 }
