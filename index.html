@@ -11,7 +11,6 @@
     
     <!-- Java Script -->
     <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <title>Curriculum Vitae | Mihai Jizdan</title>
 
@@ -28,9 +27,47 @@
                 </div>
 
                 <center>
-                    <h2>Mihai Jizdan <br> <hr color="black"> <span>App developer</span></h2>
+                    <h2>Mihai Jizdan <br> <hr color="black" style="width: 100%;"> <span>App developer</span></h2>
                 </center>
+
+                <br><br><br>
+
+                <!-- Buttons -->
+
+                <button style="height: 50px; width: 100%;" onclick="writeText(this)">
+                    Text type
+                </button>
+
+                <button style="height: 50px; width: 100%;" onclick="writeText(this)">
+                    About me
+                </button>
+
+                <button style="height: 50px; width: 100%;" onclick="writeText(this)">
+                    About me
+                </button>
+
+                <button style="height: 50px; width: 100%;" onclick="writeText(this)">
+                    About me
+                </button>
+
+                <button style="height: 50px; width: 100%;" onclick="writeText(this)">
+                    About me
+                </button>
+
+                <button style="height: 50px; width: 100%;" onclick="copyTextToDiv()">
+                    123
+                </button>
+
+                <br> <br> <br>
+
+                <hr color="black" style="width: 100%;">
+
+                <!-- Contacts buttons -->
                     
+            </div>
+
+            <div class="info_buttons">
+
             </div>
         </div>
 
@@ -39,9 +76,13 @@
             <!-- Command line -->
             <div class="usr_input">
                 <span class="symbol">&gt;</span>
-                <input class="input" id="usr_src" placeholder="Insert command" required type="text" onfocus="inputFocus(this)" onblur="inputBlur(this)" >
+                <input class="input" id="usr_src" placeholder="Insert command" required type="text" onkeydown="cmdSearch(event, this)">
             </div>
 
+            <div class="infodiv">
+                <span id="infoSpan"></span>
+            </div>
+            
         </div>
     </div>
 </body>
