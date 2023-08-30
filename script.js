@@ -1,17 +1,20 @@
 // Function to write the command when the button is pressed
-function writeText(input) {
-  const btnText = input.innerText;
+function writeText(pressedBtn) {
+  const srcText = pressedBtn.innerText;
   const cmd = document.getElementById('usr_src');
   cmd.value = '';
   let i = 0;
 
+  console.log(srcText);
+
   function typeCharacter() {
-    if (i < btnText.length) {
-      cmd.value += btnText.charAt(i);
+    if (i < srcText.length) {
+      cmd.value += srcText.charAt(i);
       i++;
       setTimeout(typeCharacter, 125);
-    }else {
-      // Fake the 'Enter' key press to trigger the search function
+    }
+    else {
+      // Emulate the 'Enter' key press to trigger the search function
       const enterClick = new KeyboardEvent('keydown', {
         key: 'Enter'
       })
@@ -26,9 +29,25 @@ function writeText(input) {
 // Function for searching the page to display
 function cmdSearch(event, input) {
   if (event.key === 'Enter'){
-    if (input.value === "Text type"){
-      const txtBrd = document.getElementById('infoSpan');
-      copyTextToDiv();
+    if (input.value === "About me"){
+      const txtBrd = document.getElementById('divOut');
+      copyTextToDiv("about.html");
+    }
+    else if (input.value === "Experience"){
+      const txtBrd = document.getElementById('divOut');
+      copyTextToDiv("experience.html");
+    }
+    else if (input.value === "Education"){
+      const txtBrd = document.getElementById('divOut');
+      copyTextToDiv("education.html");
+    }
+    else if (input.value === "Skills"){
+      const txtBrd = document.getElementById('divOut');
+      copyTextToDiv("skills.html");
+    }
+    else if (input.value === "Interests"){
+      const txtBrd = document.getElementById('divOut');
+      copyTextToDiv("interests.html");
     }
     else {
       alert('Unknown command, please input a valid command.');
@@ -38,10 +57,11 @@ function cmdSearch(event, input) {
   }
 }
 
-function copyTextToDiv() {
-  let outputDiv = document.getElementById('infoSpan');
+// Function to load the page coresponding to the command inserted
+function copyTextToDiv(pageName) {
+  let outputDiv = document.getElementById('outputDiv');
 
-  fetch('content.txt')
+  fetch(pageName)
       .then(response => response.text())
       .then(text => {
         outputDiv.innerHTML = text;
