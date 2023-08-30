@@ -16,7 +16,27 @@
   --light-pink: #d81b60;
 }
 
+:root{
+  --darkest-blue: #1a237e;
+  --darker-blue: #283593;
+  --dark-blue: #303f9f;
+  --medium-blue: #3949ab;
+  --light-blue: #3f51b5;
+  --lighter-blue: #5c6bc0;
+  --lightest-blue: #9fa8da;
+  --white: #ffffff;
+  --black: #0e1442;
+  --orange: #ffb300;
+  --yellow: #fdd835;
+  --dark-pink: #ad1457;
+  --light-pink: #d81b60;
+}
+
 *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,6 +49,64 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: #2d4059;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-prog {
+  clear: both;
+  background: darker-blue;
+  padding: 15px;
+}
+
+.skills-prog ul {
+  margin-left: 15px;
+}
+
+.skills-prog ul li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  transition-duration: 0.3s;
+}
+
+.skills-prog ul li:hover {
+  color: yellow;
+}
+
+.skills-prog ul li:hover .skills-bar .bar {
+  background: yellow;
+  box-shadow: 0 0 0 1px yellow;
+}
+
+.skills-prog ul li span {
+  display: block;
+  width: 120px;
+}
+
+ul li .skills-bar {
+  background: white;
+  height: 2px;
+  width: calc(100% - 120px);
+  position: relative;
+  border-radius: 2px;
+}
+
+.skills-prog ul li .skills-bar .bar {
+  position: absolute;
+  top: -1px;
+  height: 4px;
+  background: orange;
+  box-shadow: 0 0 0 orange;
+  border-radius: 5px;
 }
 
 ul {
@@ -94,15 +172,31 @@ ul li .skills-bar {
   display: grid;
   grid-template-columns: 1fr 2fr;
   box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  background: #fff;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
 }
 
 .CV .left_side {
   position: relative;
   background-color: #292929;
   padding-top: 30px;
+  position: relative;
+  background-color: #292929;
+  padding-top: 30px;
 }
 
 .CV .right_side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #383838;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -120,9 +214,19 @@ ul li .skills-bar {
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .CV .profile_icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
   position: relative;
   width: 150px;
   height: 150px;
@@ -132,13 +236,18 @@ ul li .skills-bar {
 .CV .profile_icon i {
   margin-top: 10px;
   margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .CV h2 {
   color: #4af626;
+  color: #4af626;
 }
 
 .CV .usr_input{
+  width: 100%;
+  background-color: #1b1b1b;
   width: 100%;
   background-color: #1b1b1b;
 }
@@ -165,6 +274,11 @@ ul li .skills-bar {
 }
 
 .symbol {
+  position: absolute;
+  left: 5px;
+  top: 1%;
+  color: white;
+  pointer-events: none;
   position: absolute;
   left: 5px;
   top: 1%;
