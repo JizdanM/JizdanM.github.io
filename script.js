@@ -49,22 +49,6 @@ function cmdSearch(event, input) {
       const txtBrd = document.getElementById('divOut');
       copyTextToDiv("interests.html");
     }
-    else if (input.value === "Experience"){
-      const txtBrd = document.getElementById('divOut');
-      copyTextToDiv("experience.html");
-    }
-    else if (input.value === "Education"){
-      const txtBrd = document.getElementById('divOut');
-      copyTextToDiv("education.html");
-    }
-    else if (input.value === "Skills"){
-      const txtBrd = document.getElementById('divOut');
-      copyTextToDiv("skills.html");
-    }
-    else if (input.value === "Interests"){
-      const txtBrd = document.getElementById('divOut');
-      copyTextToDiv("interests.html");
-    }
     else {
       alert('Unknown command, please input a valid command.');
     }
