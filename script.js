@@ -61,10 +61,18 @@ function cmdSearch(event, input) {
 function copyTextToDiv(pageName) {
   let outputDiv = document.getElementById('outputDiv');
 
+  // Add the CSS class to apply the animation
+  outputDiv.classList.add('anim-lineUp');
+
   fetch(pageName)
       .then(response => response.text())
       .then(text => {
         outputDiv.innerHTML = text;
+
+        // Remove the CSS class after a delay (e.g., 2 seconds)
+        setTimeout(() => {
+        outputDiv.classList.remove('anim-lineUp');
+        }, 2000);
       })
       .catch(error => {
         console.error('Error loading text:', error);
