@@ -59,7 +59,7 @@ function cmdSearch(event, input) {
 
 // Function to load the page coresponding to the command inserted
 function copyTextToDiv(pageName) {
-  let outputDiv = document.getElementById('outputDiv');
+  let outputDiv = document.getElementById('output_div');
 
   // Add the CSS class to apply the animation
   outputDiv.classList.add('anim-lineUp');
@@ -69,9 +69,9 @@ function copyTextToDiv(pageName) {
       .then(text => {
         outputDiv.innerHTML = text;
 
-        // Remove the CSS class after a delay (e.g., 2 seconds)
+        // Remove the CSS class after a delay
         setTimeout(() => {
-        outputDiv.classList.remove('anim-lineUp');
+          outputDiv.classList.remove('anim-lineUp');
         }, 2000);
       })
       .catch(error => {

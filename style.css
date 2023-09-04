@@ -14,6 +14,8 @@
   --yellow: #fdd835;
   --dark-pink: #ad1457;
   --light-pink: #d81b60;
+  --dark-green: #298716;
+  --light-green: #4af626;
 }
 
 *{
@@ -109,8 +111,42 @@ ul li .skills-bar {
   background-color: #383838;
 }
 
-.CV .right_side .cmdOut {
+.CV .right_side .cmd_out {
   margin: 15px;
+  animation: 2s anim-lineUp ease-out;
+}
+
+.CV .right_side .cmd_out .exp_div {
+  padding-top: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--light-green);
+  font-size: 18px;
+}
+
+.CV .right_side .cmd_out .exp_div .prog_bar {
+  background-color: #fff;
+  width: 85%;
+  height: 10px;
+  border-radius: 15px;
+}
+
+.CV .right_side .cmd_out .exp_div .prog_bar .cpp {
+  background-color: lightgreen;
+  width: 55%;
+  height: 10px;
+  border-radius: 15px;
+  animation: 1s html ease-out;
+  animation-delay: 0.4s;
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 55%;
+  }
 }
 
 .CV .profile {
