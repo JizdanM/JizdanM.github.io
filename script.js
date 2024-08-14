@@ -1,5 +1,10 @@
+let isExecuting = false; // Flag for writeText()
+
 // Function to write the command when the button is pressed
 function writeText(pressedBtn) {
+  if (isExecuting) return; // If already executing, ignore any new button presses
+  isExecuting = true;
+
   const srcText = pressedBtn.innerText;
   const cmd = document.getElementById('usr_src');
   cmd.value = '';
@@ -20,6 +25,7 @@ function writeText(pressedBtn) {
       })
 
       cmdSearch(enterClick, cmd);
+      isExecuting = false;
     }
   }
 
