@@ -1,0 +1,45 @@
+:root{
+    --white: #ffffff;
+    --black: #000;
+    --charcoal-gray: #111111;
+    --gray: #292929;
+    --highlight-gray: #313131;
+    --dark-gray: #1A1A1A;
+    --light-gray: #B3B3B3;
+    --dark-green: #298716;
+    --light-green: #4af626;
+    --neon-green: #00FF66;
+    --lime-yellow: #D4FF33;
+  }
+
+* {
+    color: var(--light-green);
+}
+
+.loading::before {
+    content: "-";
+    display: inline-block;
+    animation: spinning_loading linear infinite 0.8s;
+}
+
+@keyframes spinning_loading {
+    0% {
+        content: "-";
+    }
+
+    25% {
+        content: "\\";
+    }
+
+    50% {
+        content: "|";
+    }
+
+    75% {
+        content: "/";
+    }
+
+    100% {
+        content: "-";
+    }
+}

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- Java Script -->
@@ -16,97 +16,103 @@
 
 </head>
 <body>
-    <div class="CV">
-        <div class="left_side">
-            <!-- Profile -->
-            <div class="profile">
-
-                <div class="profile_icon">
-                    <i class="fa fa-laptop" style="color: #298716; font-size: 120px;"></i>
-                </div>
-
-                <center>
-                    <h2>Mihai Jizdan <br> <hr color="black" style="width: 100%;"> <span>Software developer</span></h2>
-                </center>
-
-                <br><br><br><br><br><br>
-
-                <!-- Buttons -->
-
-                <button class="ui-btn" onclick="writeText(this)">
-                    <span>
-                        About me
-                    </span>
-                </button>
-
-                <button class="ui-btn" onclick="writeText(this)">
-                    <span>
-                        Experience
-                    </span>
-                </button>
-
-                <button class="ui-btn" onclick="writeText(this)">
-                    <span>
-                        Education
-                    </span>
-                </button>
-
-                <button class="ui-btn" onclick="writeText(this)">
-                    <span>
-                        Skills
-                    </span>
-                </button>
-
-                <button class="ui-btn" onclick="writeText(this)">
-                    <span>
-                        Interests
-                    </span>
-                </button>
-
-                <br> <br> <br>
-
-                <hr color="black" style="width: 100%;">
-
-                <br>
-
-                <br>
-
-                <!-- Contacts buttons -->
-                Contacts
-
-                <br> <br> <br>
-
-                <!-- Social Media -->
-                Social Media
-                    
-            </div>
-
-            <div class="info_buttons">
-
-            </div>
-        </div>
-
-        <div class="right_side">
-
-            <!-- Command line -->
-            <div class="usr_input">
-                <span class="symbol">&gt;</span>
-                <input class="input" id="usr_src" placeholder="Insert command" required type="text" onkeydown="cmdSearch(event, this)">
-            </div>
-
-            <!-- Command output -->
-            <div class="cmd_out" id="output_div">
-                <div class="exp_div">
-                    <span>C++</span>
-                    <div class="prog_bar">
-                        <div class="cpp">
-                            
+    <div class="CV_wrapper">
+        <div class="CV">
+            <div class="left_wrapper">
+                <div class="left_side">
+                    <!-- Profile -->
+                    <div class="profile">
+        
+                        <div class="profile_icon">
+                            <i class="fa fa-laptop" style="color: #4af626; font-size: 120px;"></i>
                         </div>
+                        
+                        <dvi class="profile_text">
+                            <h2> <center>Mihai Jizdan</center> <hr color="#4af626" style="margin: 10px;"> <span> <center>Software developer</center></span></h2>
+                        </dvi>
+        
+                        <br><br><br><br><br><br>
+        
+                        <!-- Buttons -->
+        
+                        <button class="ui-btn" onclick="writeText(this)">
+                            <span>
+                                About me
+                            </span>
+                        </button>
+        
+                        <button class="ui-btn" onclick="writeText(this)">
+                            <span>
+                                Experience
+                            </span>
+                        </button>
+        
+                        <button class="ui-btn" onclick="writeText(this)">
+                            <span>
+                                Education
+                            </span>
+                        </button>
+        
+                        <button class="ui-btn" onclick="writeText(this)">
+                            <span>
+                                Skills
+                            </span>
+                        </button>
+        
+                        <button class="ui-btn" onclick="writeText(this)">
+                            <span>
+                                Interests
+                            </span>
+                        </button>
+        
+                        <br> <br> <br>
+        
+                        <hr color="#4af626" style="width: 100%;">
+        
+                        <br>
+        
+                        <br>
+        
+                        <!-- Contacts buttons -->
+                         <div class="Contacts">
+                            <span>
+                                <a href="mailto:mihai.jizdan1@gmail.com" target="_blank"><i class="fa fa-envelope" style="color: #4af626; font-size: 20px;"></i> mihai.jizdan1</a>
+                            </span>
+                         </div>
+        
+                        <br> <br> <br>
+        
+                        <!-- Social Media -->
+                         
+                        <div class="Socials">
+                            <!-- Socials placeholder -->
+                        </div>
+                            
+                    </div>
+        
+                    <div class="info_buttons">
+        
                     </div>
                 </div>
             </div>
-        </div>
-            
+    
+            <div class="right_wrapper">
+                <div class="right_side">
+    
+                    <!-- Command line -->
+                    <div class="usr_input">
+                        <span class="symbol">&gt;</span>
+                        <input class="input" id="usr_src" placeholder="Insert command" required type="text" onkeydown="cmdSearch(event, this)">
+                    </div>
+        
+                    <!-- Command output -->
+                    <div class="cmd_out" id="output_div">
+                        
+                    </div>
+                </div>
+            </div>
+                
+            </div>
         </div>
     </div>
 </body>

@@ -1,8 +1,8 @@
 let isExecuting = false; // Flag for writeText()
 
-// Function to write the command when the button is pressed
+// Command writing by button press
 function writeText(pressedBtn) {
-  if (isExecuting) return; // If already executing, ignore any new button presses
+  if (isExecuting) return; // If already executing, ignore other calls
   isExecuting = true;
 
   const srcText = pressedBtn.innerText;
@@ -19,7 +19,7 @@ function writeText(pressedBtn) {
       setTimeout(typeCharacter, 125);
     }
     else {
-      // Emulate the 'Enter' key press to trigger the search function
+      // Emulate the 'Enter' key press
       const enterClick = new KeyboardEvent('keydown', {
         key: 'Enter'
       })
@@ -32,7 +32,7 @@ function writeText(pressedBtn) {
   typeCharacter();
 }
 
-// Function for searching the page to display
+// Search page by command
 function cmdSearch(event, input) {
   if (event.key === 'Enter'){
     if (input.value === "About me"){
@@ -63,11 +63,11 @@ function cmdSearch(event, input) {
   }
 }
 
-// Function to load the page coresponding to the command inserted
+// Load page by command
 function copyTextToDiv(pageName) {
   let outputDiv = document.getElementById('output_div');
 
-  // Add the CSS class to apply the animation
+  // Apply css animation
   outputDiv.classList.add('anim-lineUp');
 
   fetch(pageName)
@@ -75,7 +75,6 @@ function copyTextToDiv(pageName) {
       .then(text => {
         outputDiv.innerHTML = text;
 
-        // Remove the CSS class after a delay
         setTimeout(() => {
           outputDiv.classList.remove('anim-lineUp');
         }, 2000);
