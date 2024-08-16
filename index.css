@@ -28,18 +28,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 115vh;
 }
 
 .CV_wrapper {
   position: solid;
-  margin: 45px;
   border: 2px solid var(--neon-green);
+  height: 100vh;
 }
 
 .CV {
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 1000px;
   min-height: 800px;
   background: transparent;
@@ -56,59 +56,31 @@ body {
 
 .CV .left_wrapper .left_side {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--gray);
-  min-height: 105vh;
   padding: 10px;
-  padding-top: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .CV .right_wrapper {
-  position: relative;
   background-color: transparent;
+  margin:10px;
 }
 
 .CV .right_side {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 105vh;
   background-color: var(--gray);
-  margin: 10px;
-}
-
-.CV .profile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.CV .profile {
-  align-items: center;
-  justify-content: center;
-}
-
-.CV .profile_icon {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-}
-
-.CV .profile_icon i {
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.CV .profile h2 span {
-  color: var(--lime-yellow);
 }
 
 .CV h2 {
   color: var(--light-green);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font);
 }
 
 .CV p {
@@ -119,8 +91,45 @@ body {
   color: var(--light-green);
 }
 
+/* 
+** Left side of the CV
+*/
+
+.left_side .profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_side .profile {
+  align-items: center;
+  justify-content: center;
+}
+
+.left_side .profile_icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.left_side .profile_icon i {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.left_side .profile .profile_text {
+  margin-bottom: 50px;
+}
+
+.left_side .profile .profile_text h2 span {
+  color: var(--lime-yellow);
+}
+
 /* Button design setup */
-.CV .left_side .profile .ui-btn {
+.left_side .ui-btn {
   box-sizing: border-box;
   padding: 15px 20px;
   width: 100%;
@@ -139,7 +148,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
-.CV .left_side .profile .ui-btn span {
+.left_side .ui-btn span {
   letter-spacing: .2rem;
   transition: .3s;
   box-sizing: border-box;
@@ -147,26 +156,26 @@ body {
   background: inherit;
 }
 
-.CV .left_side .profile .ui-btn span::before {
+.left_side .ui-btn span::before {
   box-sizing: border-box;
   position: absolute;
   content: "";
   background: inherit;
 }
 
-.CV .left_side .profile .ui-btn span::before {
+.left_side .ui-btn span::before {
   animation: none;
 }
 
-.CV .left_side .profile .ui-btn:hover span, .ui-btn:focus span {
+.left_side .ui-btn:hover span, .ui-btn:focus span {
   color: inherit;
 }
 
-.CV .left_side .profile .ui-btn:hover span::before, .ui-btn:focus span::before {
+.left_side .ui-btn:hover span::before, .ui-btn:focus span::before {
   animation: chitchat linear both 0.6s;
 }
 
-.ui-btn span::before {
+.left_side .ui-btn span::before {
   transition: none;
 }
 
@@ -196,27 +205,27 @@ body {
   }
 
   30% {
-    content: "#{[+.";
+    content: "#{[+.1";
   }
 
   35% {
-    content: "@}-]?";
+    content: "@}-]_?";
   }
 
   40% {
-    content: "?{4%";
+    content: "?{+4[%";
   }
 
   45% {
-    content: "=1^!";
+    content: "=1^!-";
   }
 
   50% {
-    content: "?2%";
+    content: "?2%{";
   }
 
   55% {
-    content: "\;1}";
+    content: "\;|1}";
   }
 
   60% {
@@ -265,21 +274,220 @@ body {
   }
 }
 
-.CV .left_side .profile .Contacts a{
+.left_side .contacts{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.left_side .contacts div{
+  margin-bottom: 10px;
+}
+
+.left_side .contacts a{
   color: var(--white);
   text-decoration: none;
 }
 
-.CV .right_side .usr_input{
+.left_side .contacts a:hover{
+  color: var(--light-green);
+}
+
+.left_side .contacts div a:hover span::after {
+  width: 100%;
+}
+
+.left_side .contacts div:hover i {
+  color: var(--lime-yellow);
+}
+
+.left_side .contacts div i {
+  color: var(--light-green);
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin-right: 5px;
+  transition-duration: 0.3s;
+}
+
+.left_side .contacts div span {
+  position: relative;
+}
+
+.left_side .contacts div span::after {
+  content: "";
+  position: absolute;
+  background: var(--light-green);
+  height: 1px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  transition-duration: 0.3s;
+}
+
+.left_side .socials {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.left_side .socials .soc {
+  min-width: 40px;
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.left_side .socials .binary_png_wrapper {
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+
+.left_side .socials .social_icon {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.left_side .socials .binary_png_wrapper img {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  clip-path: inset(0 0 100% 0);
+}
+
+.left_side .socials .social_icon a {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_side .socials .social_icon svg {
+  height: inherit;
+  width: inherit;
+}
+
+.left_side .socials .handle {
+  height: 100%; /* For 1 row set to 100%, for 2 rows set to 50% */
+  position: absolute;
+  background-color: var(--light-green);
+  width: 0px;
+  z-index: 3;
+  transform: rotate(90deg) translate(0%, -47%);
+}
+
+.left_side .socials .social_icon:hover ~ .handle {
+  animation: slider_move linear both .15s;
+}
+
+.left_side .socials .social_icon:hover svg, .social_icon:hover i {
+  animation: hide_top linear both .15s;
+}
+
+.left_side .socials .social_icon:hover ~ .binary_png_wrapper img {
+  animation: show_top linear both .15s;
+}
+
+@keyframes slider_move {
+  0%{ 
+    width: 2px;
+    transform: rotate(90deg) translate(-1500%, -47%);
+  }
+  100%{
+    width: 2px;
+    transform: rotate(90deg) translate(0, -47%);
+  }
+}
+
+@keyframes hide_top {
+  0% {
+    clip-path: inset(0% 0 0 0);
+  }
+  10% {
+    clip-path: inset(5% 0 0 0);
+  }
+  20% {
+    clip-path: inset(10% 0 0 0);
+  }
+  30% {
+    clip-path: inset(15% 0 0 0);
+  }
+  40% {
+    clip-path: inset(20% 0 0 0);
+  }
+  50% {
+    clip-path: inset(25% 0 0 0);
+  }
+  60% {
+    clip-path: inset(30% 0 0 0);
+  }
+  70% {
+    clip-path: inset(35% 0 0 0);
+  }
+  80% {
+    clip-path: inset(40% 0 0 0);
+  }
+  90% {
+    clip-path: inset(45% 0 0 0);
+  }
+  100% {
+    clip-path: inset(50% 0 0 0);
+  }
+}
+
+@keyframes show_top {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  20% {
+    clip-path: inset(0 0 90% 0);
+  }
+  40% {
+    clip-path: inset(0 0 80% 0);
+  }
+  60% {
+    clip-path: inset(0 0 70% 0);
+  }
+  80% {
+    clip-path: inset(0 0 60% 0);
+  }
+  100% {
+    clip-path: inset(0 0 50% 0);
+  }
+}
+
+/* 
+** Right side of the CV
+*/
+
+.right_side .usr_input{
+  position: relative;
   width: 100%;
   background-color: var(--dark-gray);
 }
 
-.CV .right_side .usr_input .input {
+.right_side .usr_input .input {
   color: var(--light-green);
   font-size: 0.9rem;
   background-color: transparent;
   width: 100%;
+  height: 35px;
   box-sizing: border-box;
   padding-inline: 0.5em;
   padding-block: 0.7em;
@@ -289,117 +497,59 @@ body {
   padding-left: 20px;
 }
 
-.CV .right_side .usr_input .symbol {
+.right_side .usr_input .symbol {
+  width: 20px;
+  height: 95%;
   position: absolute;
-  left: 5px;
-  top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--light-green);
   pointer-events: none;
 }
 
-.CV .right_side .usr_input .input:focus {
+.right_side .usr_input .input:focus {
   outline: none;
 }
 
-.CV .right_side .usr_input .input:focus + .input-border {
+.right_side .usr_input .input:focus + .input-border {
   width: 100%;
 }
 
-.CV .right_side .cmd_out {
+.right_side .cmd_out {
   margin: 15px;
   animation: 2s anim-lineUp ease-out;
 }
 
-.CV .right_side .cmd_out .exp_div {
-  padding-top: 10px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--light-green);
-  font-size: 18px;
-}
-
-.CV .right_side .cmd_out .exp_div .prog_bar {
-  background-color: var(--white);
-  width: 85%;
-  height: 10px;
-  border-radius: 15px;
-}
-
-.CV .right_side .cmd_out .exp_div .prog_bar .cpp {
-  background-color: var(--neon-green);
-  width: 55%;
-  height: 10px;
-  border-radius: 15px;
-  animation: 1s cpp ease-out;
-  animation-delay: 0.4s;
-}
-
-@keyframes cpp {
-  0% {
-    width: 0%;
-  }
-  100%{
-    width: 55%;
-  }
-}
-
-
-/* lineup class and keyframes */
-.anim-lineUp{
-  animation: 2s anim-lineUp ease-out;
-}
-
-@keyframes anim-lineUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
 /* Mobile devices responsivness */
 @media only screen and (max-width: 800px) {
-    .CV_wrapper {
-      margin: 0;
-      border: 0;
-    }
+  .CV_wrapper {
+    margin: 0;
+    border: 0;
+  }
 
-    .CV {
-      display: block;
-      margin: 0;
-    }
+  .CV {
+    display: block;
+    margin: 0;
+  }
 
-    .CV .left_wrapper {
-      border: 0;
-      margin: 0;
-      padding: 0;
-      display: none;
-    }
+  .CV .left_wrapper {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
 
-    .CV .profile {
-      padding: 0;
-      margin: 0;
-    }
+  .CV .profile {
+    padding: 0;
+    margin: 0;
+  }
 
-    .CV .right_side {
-      min-height: 100vh;
-    }
+  .CV .left_side .profile .Contacts {
+    display: none;
+  }
 
-    .CV .left_side .profile .Contacts {
-      display: none;
-    }
-
-    .CV .left_side .profile .Socials {
-      display: none;
-    }
+  .CV .left_side .profile .Socials {
+    display: none;
+  }
 }

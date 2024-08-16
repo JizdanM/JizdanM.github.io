@@ -16,16 +16,18 @@ function writeText(pressedBtn) {
     if (i < srcText.length) {
       cmd.value += srcText.charAt(i);
       i++;
-      setTimeout(typeCharacter, 125);
+      setTimeout(typeCharacter, 85);
     }
     else {
-      // Emulate the 'Enter' key press
-      const enterClick = new KeyboardEvent('keydown', {
-        key: 'Enter'
-      })
+      setTimeout(() => {
+        // Emulate the 'Enter' key press
+        const enterClick = new KeyboardEvent('keydown', {
+          key: 'Enter'
+        })
 
-      cmdSearch(enterClick, cmd);
-      isExecuting = false;
+        cmdSearch(enterClick, cmd);
+        isExecuting = false;
+      }, 125);
     }
   }
 

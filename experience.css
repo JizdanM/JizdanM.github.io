@@ -10,10 +10,6 @@
     --light-green: #4af626;
     --neon-green: #00FF66;
     --lime-yellow: #D4FF33;
-  }
-
-* {
-    color: var(--light-green);
 }
 
 .loading::before {

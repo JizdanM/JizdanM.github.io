@@ -1,0 +1,46 @@
+:root{
+    --white: #ffffff;
+    --black: #000;
+    --charcoal-gray: #111111;
+    --gray: #292929;
+    --highlight-gray: #313131;
+    --dark-gray: #1A1A1A;
+    --light-gray: #B3B3B3;
+    --dark-green: #298716;
+    --light-green: #4af626;
+    --neon-green: #00FF66;
+    --lime-yellow: #D4FF33;
+}
+
+.right_side .cmd_out .exp_div {
+  padding-top: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--light-green);
+  font-size: 18px;
+}
+
+.right_side .cmd_out .exp_div .prog_bar {
+  background-color: var(--white);
+  width: 85%;
+  height: 10px;
+  border-radius: 15px;
+}
+
+.right_side .cmd_out .exp_div .prog_bar .web {
+  background-color: var(--neon-green);
+  height: 10px;
+  width: 0%;
+  border-radius: 15px;
+  animation: 1s web ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes web {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 15%;
+  }
+}
