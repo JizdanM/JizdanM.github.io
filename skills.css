@@ -24,6 +24,34 @@
   overflow: hidden;
 }
 
+.right_side .cmd_out .web.mobile {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.right_side .cmd_out .web_percentage {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.right_side .cmd_out .web::before {
+  content: '';
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: web_load .6s forwards, web_blink 0.7s .6s infinite;
+}
+
+.right_side .cmd_out .web_percentage::before {
+  content: '';
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: web_percentage_load .6s forwards;
+}
+
 .right_side .cmd_out .web::before {
   content: '';
   position: absolute;
@@ -42,22 +70,22 @@
 
 @keyframes web_load {
   0% {
-    content: '▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '▁▁▁▁▁';
   }
   20% {
-    content: '█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '█▁▁▁▁';
   }
   40% {
-    content: '██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '██▁▁▁';
   }
   60% {
-    content: '███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '███▁▁';
   }
   80% {
-    content: '████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '████▁';
   }
   100% {
-    content: '█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '█████';
   }
 }
 
@@ -84,12 +112,66 @@
 
 @keyframes web_blink {
   0% {
-    content: '█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '█████';
   }
   50% {
-    content: '████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '████▁';
   }
   100% {
-    content: '█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁';
+    content: '█████';
+  }
+}
+
+/* Mobile devices responsivness */
+@media only screen and (max-width: 907px) {
+  .right_side .cmd_out .web.mobile {
+    display: inline-block;
+  }
+
+  .right_side .cmd_out .web {
+    display: none;
+    animation: none 0s forwards;
+  }
+
+  @keyframes web_load {
+    0% {
+      content: '▁▁▁';
+    }
+    40% {
+      content: '█▁▁';
+    }
+    60% {
+      content: '██▁';
+    }
+    100% {
+      content: '███';
+    }
+  }
+
+  @keyframes web_blink {
+    0% {
+      content: '███';
+    }
+    50% {
+      content: '██▁';
+    }
+    100% {
+      content: '███';
+    }
+  }
+
+  @keyframes web_percentage_load {
+    0% {
+      content: '0%';
+    }
+    40% {
+      content: '4%';
+    }
+    80% {
+      content: '8%';
+    }
+    100% {
+      content: '10%';
+    }
   }
 }
