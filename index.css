@@ -296,7 +296,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .left_side .contacts div{
-  margin-bottom: 10px;
+  padding-bottom: 0.5rem;
 }
 
 .left_side .contacts a{
@@ -312,7 +312,11 @@ body::-webkit-scrollbar-thumb{
   width: 100%;
 }
 
-.left_side .contacts div:hover i {
+.left_side .contacts a:hover i {
+  color: var(--lime-yellow);
+}
+
+.left_side .contacts a:hover svg {
   color: var(--lime-yellow);
 }
 

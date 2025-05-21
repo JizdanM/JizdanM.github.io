@@ -11,3 +11,43 @@
     --neon-green: #00FF66;
     --lime-yellow: #D4FF33;
 }
+
+h2 {
+    font-size: 1.2rem;
+}
+
+p{
+    font-size: 14px;
+}
+
+p b{
+    font-size: 16px;
+}
+
+.loading::before {
+    content: "-";
+    display: inline-block;
+    animation: spinning_loading linear infinite 0.8s;
+}
+
+@keyframes spinning_loading {
+    0% {
+        content: "-";
+    }
+
+    25% {
+        content: "\\";
+    }
+
+    50% {
+        content: "|";
+    }
+
+    75% {
+        content: "/";
+    }
+
+    100% {
+        content: "-";
+    }
+}

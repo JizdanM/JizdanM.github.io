@@ -11,3 +11,25 @@
     --neon-green: #00FF66;
     --lime-yellow: #D4FF33;
 }
+
+h2 {
+    margin: 20px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 35px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+ul {
+    list-style: circle;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+li {
+    color: var(--light-green);
+    padding-top: 5px;
+}

@@ -77,6 +77,10 @@ function copyTextToDiv(pageName) {
       .then(text => {
         outputDiv.innerHTML = text;
 
+        // Run the skills animation
+        if (pageName === 'skills.html' && typeof animateSkillBars === 'function') {
+          animateSkillBars();
+        }
         setTimeout(() => {
           outputDiv.classList.remove('anim-lineUp');
         }, 2000);
@@ -96,7 +100,6 @@ function toggleNav(navClass) {
     const targetNav = document.querySelector(`.${navClass}`);
     let activeNav = null;
 
-    // Find currently active nav
     allNavs.forEach(nav => {
         if (nav.style.height === '3rem') {
             activeNav = nav;
@@ -129,3 +132,20 @@ function toggleNav(navClass) {
         }
     }
 }
+
+function updateSkillBars() {
+    const skillBars = document.querySelectorAll('.web');
+    skillBars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        const loadedPartitions = Math.round(percentage / 2);
+        const unloadedPartitions = 50 - loadedPartitions;
+        bar.textContent = '█'.repeat(loadedPartitions) + '▁'.repeat(unloadedPartitions);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateSkillBars();
+    if (typeof animateSkillBars === 'function') {
+        animateSkillBars();
+    }
+});
